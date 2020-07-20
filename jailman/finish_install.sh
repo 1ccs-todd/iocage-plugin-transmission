@@ -2,7 +2,7 @@
 # This file contains the install script for transmission
 
 #init jail
-initblueprint "$1"
+initplugin "$1"
 
 # Initialise defaults
 
@@ -29,4 +29,4 @@ echo "Disabling RPC whitelist, you may want to reenable it with the specific IP'
 sed -i '' -e 's/\([[:space:]]*"rpc-whitelist-enabled":[[:space:]]*\)true,/\1false,/' $SETTINGS
 
 iocage exec "$1" service transmission restart
-exitblueprint "$1"
+exitplugin "$1"

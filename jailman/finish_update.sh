@@ -2,7 +2,7 @@
 # This file contains the update script for transmission
 
 #init jail
-initblueprint "$1"
+initplugin "$1"
 
 # Initialise defaults
 
