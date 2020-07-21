@@ -26,7 +26,7 @@ iocage exec "$1" service transmission stop
 SETTINGS="/config/settings.json"
 
 echo "Disabling RPC whitelist, you may want to reenable it with the specific IP's you will access transmission with by editing $SETTINGS"
-sed -i '' -e 's/\([[:space:]]*"rpc-whitelist-enabled":[[:space:]]*\)true,/\1false,/' $SETTINGS
+iocage exec "$1" sed -i '' -e 's/\([[:space:]]*"rpc-whitelist-enabled":[[:space:]]*\)true,/\1false,/' $SETTINGS
 
 iocage exec "$1" service transmission restart
 exitplugin "$1"
